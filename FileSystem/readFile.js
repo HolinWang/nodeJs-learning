@@ -1,6 +1,8 @@
 const fs = require("fs");
 
-fs.readFile("./file.txt", "utf-8", (err, data) => {
+// __dirname表示当前文件所处目录
+console.log(__dirname)
+fs.readFile(`${__dirname}/file.txt`, "utf-8", (err, data) => {
   if (err) {
     return console.log(`fail ${err}}`);
   } else {
