@@ -17,6 +17,7 @@ fs.readFile(path.join(__dirname, './index.html'), 'utf8', (err, data) => {
   // 拆解css js html 文件
   resolveCSS(data);
   resolveJS(data);
+  resolveHTML(data);
 })
 
 function resolveCSS(htmlStr) {
@@ -55,6 +56,21 @@ function resolveJS(htmlStr) {
       return console.log(`写入js文件失败! ${err.message}`);
     } else {
       return console.log(`写入js文件成功!`);
+    }
+  })
+}
+
+function resolveHTML(htmlStr) {
+
+  const htmlStr_new = htmlStr.replace(regStyle, '<link rel="stylesheet" href="./index.css">').replace(regScript, '<script src="./index.js"></script>')
+
+  // 将提取的html写入index.css文件中
+
+  fs.writeFile(path.join(__dirname, './clock.html'), htmlStr_new, (err) => {
+    if (err) {
+      return console.log(`写入html文件失败! ${err.message}`);
+    } else {
+      return console.log(`写入html文件成功!`);
     }
   })
 }
