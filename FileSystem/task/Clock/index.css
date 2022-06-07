@@ -1,0 +1,26 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 200px;
+      height: 100px;
+      line-height: 100px;
+      margin: 100px auto;
+      background-color: skyblue;
+      text-align: center;
+    }
+
+    span {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      color: #ffffff;
+      font-size: 20px;
+      background-color: cornflowerblue;
+      text-align: center;
+    }
+  
